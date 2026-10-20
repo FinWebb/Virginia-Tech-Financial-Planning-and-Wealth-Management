@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://finwebb.github.io/Virginia-Tech-Financial-Planning-and-Wealth-Management/sitemap.xml

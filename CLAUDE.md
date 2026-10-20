@@ -8,19 +8,17 @@ A static, single-page informational website for Virginia Tech's Financial Planni
 
 ## Running locally
 
-There is no build/dev-server tooling configured. Open `VT Website.html` directly in a browser, or serve the directory statically, e.g.:
+There is no build/dev-server tooling configured. Open `index.html` directly in a browser, or serve the directory statically, e.g.:
 
 ```
 python3 -m http.server 8000
 ```
 
-Note the filename has a space in it (`VT Website.html`), so quote/escape it in shell commands.
-
-There is no test suite, linter, or formatter configured in this repo.
+There is no test suite, linter, or formatter configured in this repo. The site is deployed via GitHub Pages from the `main` branch root.
 
 ## File structure
 
-- `VT Website.html` — the entire page markup, one file with six `<section>`s (`#hero`, `#stats`, `#about`, `#fps`, `#board`, `#contact`) plus a slide-out `#side-nav`.
+- `index.html` — the entire page markup, one file with six `<section>`s (`#hero`, `#stats`, `#about`, `#fps`, `#board`, `#contact`) plus a slide-out `#side-nav`.
 - `style.css` — all styling. CSS custom properties for the VT maroon/orange palette are defined once at the top of `:root` and used throughout; change colors there rather than hardcoding hex values in rules.
 - `script.js` — all page behavior, organized as independent, self-contained blocks (see below), not modules. Loaded after `firms-data.js` at the bottom of the HTML body.
 - `firms-data.js` — a single global `firms` array of `[name, city, state, lat, lon, websiteUrl]` tuples, one per alumni employer. This is the dataset backing the alumni firm map. Loaded before `script.js` since the map IIFE reads the global `firms`.
@@ -55,4 +53,4 @@ Colors, type, and easing are centralized as CSS custom properties in `style.css`
 
 ## Content accuracy
 
-Stats, curriculum facts, and outcomes figures in `VT Website.html` (employment rate, salary, alumni counts, course lists, credit hours) are sourced from the VT undergraduate catalog and internal alumni tracker data, cited inline via `.fine-print` notes in each section. When updating these numbers, keep the citation text next to them accurate/current rather than removing it.
+Stats, curriculum facts, and outcomes figures in `index.html` (employment rate, salary, alumni counts, course lists, credit hours) are sourced from the VT undergraduate catalog and internal alumni tracker data, cited inline via `.fine-print` notes in each section. When updating these numbers, keep the citation text next to them accurate/current rather than removing it.
